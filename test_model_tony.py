@@ -19,7 +19,7 @@ def show_mnist_graphic_number(img):
     plt.show()
 
 # Load the saved model
-new_model = tf.keras.models.load_model('mnist_trained.keras')
+new_model = tf.keras.models.load_model('tp1.keras')
 
 # Show the model architecture
 new_model.summary()
@@ -55,3 +55,9 @@ print(new_model.predict(np.reshape(img1, newshape=(1, 28, 28))))
 
 # Show the image
 show_mnist_graphic_number(img1)
+
+print('\n Evaluate the new model against the train set:')
+my_model.evaluate(x=x_train_normalized, y=y_train, batch_size=batch_size)
+
+print('\n Evaluate the new model against the test set:')
+my_model.evaluate(x=x_test_normalized, y=y_test, batch_size=batch_size)

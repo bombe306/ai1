@@ -69,7 +69,7 @@ def train_model(model, train_features, train_label, epochs, batch_size, validati
 
 # === [ Step 5 ] ===
 learning_rate = 0.01
-epochs = 250
+epochs = 25
 batch_size = 32
 validation_split = 0.2
 
@@ -79,10 +79,4 @@ epochs, hist = train_model(my_model, x_train_normalized, y_train, epochs, batch_
 plot_curve(epochs, hist, ['accuracy', 'val_accuracy'])
 plot_curve(epochs, hist, ['loss', 'val_loss'])
 
-print('\n Evaluate the new model against the train set:')
-my_model.evaluate(x=x_train_normalized, y=y_train, batch_size=batch_size)
-
-print('\n Evaluate the new model against the test set:')
-my_model.evaluate(x=x_test_normalized, y=y_test, batch_size=batch_size)
-
-my_model.save('mnist_trained.keras')
+my_model.save('tp1.keras')
